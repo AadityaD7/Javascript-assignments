@@ -1,0 +1,15 @@
+Q.1:Write JS code which takes input from user and show to console.
+Ans: 
+   var input=prompt("enter your name");
+   console.log(input);
+
+Q.2:Explain with examples remaining methods of string and array.
+Ans:
+      arr.length();           string.length();
+      arr.splice();           string.indexOf();
+      arr1.concat(arr2);      string.lastIndexOf();
+      arr.push();             string.search(str);
+      arr.pop();              string.slice();
+      arr.shift();            string.toUpperCase();
+      arr.unshift();          string.toLowerCase();
+      arr.join();             string.concat();
