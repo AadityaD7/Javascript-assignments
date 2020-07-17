@@ -1,0 +1,42 @@
+Q.1:
+Ans:
+let num=prompt("enter any number to check is it even or odd?");
+if( num%2==0 )
+{
+    console.log('even');
+
+}
+else{
+    console.log('odd');
+}
+
+Q.2:
+Ans:
+let name=prompt('enter your os name and version of it.','e.g.Android 10');
+let arr=name.split(" ");
+const names = Object.values(arr);
+os=names[0];
+version=names[1];
+console.log(`The os name is ${os} and version of it is ${version}.`);
+
+Q.3:
+Ans:
+let mark=prompt('Enter your marks in digits.','e.g. 50');
+if (mark>=91 && mark<=100) {
+    console.log('your grade is:A+');
+}
+else if (mark>=75 && mark<91) {
+    console.log('your grade is:A');   
+}
+else if (mark>=50 && mark<75) {
+    console.log('your grade is:B')
+}
+else if (mark>=35 && mark<50) {
+    console.log('your grade is:B+')
+} 
+else if(mark<35){
+    console.log('your fail.better luck next time.')
+}
+else{
+    console.log('please enter correct marks.')
+} 
