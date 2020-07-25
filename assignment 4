@@ -1,0 +1,98 @@
+QUESTION.1:
+for (let i = 1; i <=100; i++) {
+  if (i%3==0 && i%5==0) {
+      console.log('fizzbuzz');
+  }
+   else if (i%5==0) {
+       console.log('buzz');
+   }
+   else if (i%3==0) {
+       console.log('fizz');
+   }
+    else{
+        console.log(i);
+    }
+}
+
+QUESTION.2:
+const student={
+    name:'helsinki',
+    age:24,
+    projects:{
+        diceGame:'two player dicegame using javascript.'
+    }
+
+}
+console.log(student)
+const {name,age,projects:{diceGame}}=student;
+
+QUESTION.3:
+let shoppingList=['sugar','sauce','jaggery','peanuts','biscuits'];
+// console.log(shoppingList)
+let shoppingBasket=[...shoppingList,'poha','maggy','cheese'];
+console.log(shoppingBasket)
+
+
+
+QUESTION.5:
+var saleAmount = prompt('enter your sale amount to know your commission reward amount.')
+var commission;
+if (saleAmount >= 0 && saleAmount <= 5000) {
+    commission = saleAmount * 0.02;
+    alert(`your commission reward is${commission.toFixed(2)} Rs`)
+
+} else if (saleAmount >= 5001 && saleAmount <= 10000) {
+
+    commission = saleAmount * 0.05;
+    alert(`your commission reward is ${commission.toFixed(2)} Rs`)
+} else if (saleAmount >= 10001 && saleAmount <= 20000) {
+
+    commission = saleAmount * 0.07;
+    alert(`your commission reward is ${commission.toFixed(2)} Rs`)
+} else if (saleAmount >= 20001) {
+
+    commission = saleAmount * 0.10;
+    alert(`your commission reward is ${commission.toFixed(2)} Rs`)
+} else {
+    alert('please enter No.')
+}
+
+
+QUESTION .6:
+
+var input = prompt('enter no.which is greater than 100!!!')
+if (input > 100) {
+    alert('well done')
+} else if (input <= 100 || input === "") {
+    alert('please enter no.greater than 100')
+
+}
+
+QUESTION.7:
+
+let input = prompt('enter no.to find prime no.s')
+for (var counter = 2; counter <= input; counter++)
+
+{
+    var not_prime = false;
+
+    for (var div = 2; div <= (counter - 1); div++)
+
+    {
+        if (counter % div === 0) { not_prime = true; }
+    }
+
+    if (not_prime === false) { console.log(counter); }
+}
+
+QUESTION.8:
+
+let ask = (question, yes, no) => {
+    if (confirm(question)) yes()
+    else no();
+}
+ask(
+    'do you agree',
+    () => alert('you agreed.'),
+    () => alert('you canceled the execution.'),
+);
