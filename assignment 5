@@ -1,0 +1,100 @@
+// QUESTION .1:
+var positiveNumber = prompt('enter positive no. ');
+var arr = positiveNumber.split(' ');
+arr.forEach(Element => {
+    if (Element < 0) {
+        alert(`${Element} is not positive no.`);
+
+    }
+    var arr = [];
+    arr.push(positiveNumber);
+});
+
+function odd(value, index, array) {
+
+    if (value % 2 == 1) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+var oddArr = arr.filter(odd);
+// console.log(oddArr)
+let cube = oddArr.map(function(el) {
+    return el ** 3;
+})
+console.log(cube)
+
+
+QUESTION .2:
+class User {
+    constructor(givenName, givenAge, givenEmail) {
+        this.name = givenName;
+        this.age = givenAge;
+        this.email = givenEmail;
+        this.courses = [];
+
+    }
+
+    login() {
+        alert("user logged in");
+
+    }
+    logout() {
+        alert("user logged out");
+    }
+
+}
+var user1 = new User("tnmy", 20, "ji@gmail.com");
+var user2 = new User("abch", 21, "dbh@gmail.com");
+class Moderator extends User {
+    constructor(givenName, givenAge, givenEmail, givenCoins) {
+        super(givenName, givenAge, givenEmail);
+        this.coins = givenCoins;
+    }
+    addCoin(givenCoins) {
+        return givenCoins + 1;
+    }
+    removeCoin(givenCoins) {
+        return givenCoins - 1;
+    }
+}
+// const mod = new Moderator("wwtqrw", 20, "cbsbc@gmail.com", 10);
+// console.log(mod.removeCoin(20));
+class Admin extends Moderator {
+    constructor(givenName, givenAge, givenEmail, givenCoins) {
+        super(givenName, givenAge, givenEmail, givenCoins);
+
+    }
+    addCourse(user, course) {
+        user.courses.push(course);
+        console.log(user);
+    }
+}
+const admin = new Admin("sd", 34, "dbbdhb@gmail.com", 100);
+admin.addCourse(user1, "js");
+
+QUESTION.3:
+let url = "https://jsonplaceholder.typicode.com/todos";
+
+function getData() {
+    fetch(url).then((response) => {
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+
+        })
+}
+getData();
+
+
+async function getData() {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+}
+
+getData();
