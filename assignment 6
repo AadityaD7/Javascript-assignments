@@ -1,0 +1,62 @@
+QUESTION.1:
+var div = document.getElementById("full");
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+function changeColor() {
+    div.style.backgroundColor = getRandomColor();
+}
+setInterval(changeColor, 5000);
+
+
+QUESTION.2:
+let val = prompt('enter no.');
+val = Number(val)
+window.onload = function multiply() {
+    for (let index = 1; index <= 9; index++) {
+        const element = val * index;
+        var mul = document.getElementById('mul');
+        document.getElementById('mul').innerHTML += `${val}*${index}= ${element}<br>`;
+    }
+}
+multiply();
+
+
+QUESTION.3:
+function myFunction() {
+    var name = document.getElementById('myText').value;
+    document.getElementById('display').innerHTML = `welcome ${name}`
+}
+
+function on() {
+    document.body.style.backgroundColor = 'black';
+    document.body.style.color = "white";
+}
+
+function off() {
+    document.body.style.backgroundColor = 'white';
+    document.body.style.color = 'black'
+
+}
+
+function startTime() {
+    var today = new Date();
+    var hour = today.getHours();
+    var minutes = today.getMinutes();
+    var seconds = today.getSeconds();
+    minutes = checkTime(minutes);
+    seconds = checkTime(seconds);
+    document.getElementById('date').innerHTML =
+        hour + ":" + minutes + ":" + seconds;
+    var t = setTimeout(startTime, 500);
+}
+
+function checkTime(i) {
+    if (i < 10) { i = "0" + i };
+    return i;
+}
