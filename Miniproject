@@ -1,0 +1,75 @@
+
+#javascript:
+fetch("https://type.fit/api/quotes")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        showdata(data);
+    });
+
+function showdata(data) {
+
+    for (let i = 0; i < data.length; i++) {
+        task(i);
+    }
+
+    function task(i) {
+        setTimeout(function() {
+            document.getElementById('paraText').innerText = data[i].text
+            document.getElementById('paraAuthor').innerText = "-" + data[i].author
+
+        }, 2700 * i);
+    }
+
+}
+
+
+#HTML:(put following HTML code into body section of BOOTSTRAP Starter template)
+
+    <div class="container" id="div">
+
+        <h1 class="container " id="quotes">Quotes</h1>
+        <hr id="hr">
+        <p class="container" id="paraText">
+        lorem
+        </p>
+        <p id="paraAuthor" class="container mx-auto my-auto">
+
+        </p>
+    </div>
+
+#CSS:
+body {
+    background-color:skyblue;
+    color: white;
+    backdrop-filter: blur(5px);
+    height: 100vh;
+    width: 100vw;
+}
+
+#div {
+    border-radius: 18px;
+    padding: 3%;
+    background-color: black;
+    opacity: 0.8;
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    right: 10%;
+}
+
+#paraText {
+    font-size: 25px;
+    color: white;
+    margin-bottom: 0%;
+}
+
+#quotes {
+    color: skyblue;
+    font-size: 40px;
+}
+
+#hr {
+    background-color: white;
+}
